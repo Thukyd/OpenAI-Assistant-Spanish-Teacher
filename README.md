@@ -1,1 +1,0 @@
-# OpenAI-Assistant-Spanish-Teacher

@@ -1,0 +1,117 @@
+/* src/global.css */
+
+/*
+  Check Cunic Partition System
+  https://romekmarber.com/portfolio/cunic/
+*/
+
+body {
+  font-family: 'Futura', sans-serif;
+  background-color: #1a1a1a; /* Grey background for the entire app */
+  color: #FFFFFF; /* White text color for contrast */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input, button {
+  font-family: 'Futura', sans-serif;
+}
+
+
+button {
+  /* ... */
+  background-color: #ff4136; /* Orange */
+  /* ... */
+}
+
+button:hover {
+  background-color: #cc8400; /* Darker orange for hover state */
+}
+
+/* Style for input and button to make it more cohesive */
+input, button {
+  border: 2px solid #ff4136; /* Orange border */
+  /* ... */
+}
+
+
+/* Global styles for chat container */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  max-width: 768px;
+  margin: 0 auto; /* Center the chat container */
+  background-color: #FFFFFF; /* White background for the container */
+  border: 1px solid #000; /* Black border for definition */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden;
+}
+
+/* Global styles for chat message list */
+.message-list {
+  list-style-type: none;
+  padding: 1rem;
+  margin: 0;
+  overflow-y: auto;
+  background-color: #FFFFFF; /* White background for the message list */
+  flex-grow: 1;
+  border-bottom: 1px solid #000; /* Black border to separate input area */
+}
+
+/* Global styles for individual messages */
+.message {
+  display: block;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+  border-radius: 12px;
+  max-width: 80%;
+  word-wrap: break-word;
+  background-color: #FFFFFF; /* White background for messages */
+  border: 1px solid #ccc; /* Light grey border for each message */
+}
+
+.user-message {
+  color: #000; /* Black text for contrast */
+  align-self: flex-start; /* Align user messages to the left */
+}
+
+.bot-message {
+  color: #000; /* Black text for contrast */
+  align-self: flex-end; /* Align bot messages to the right */
+  background-color: #ff4136; /* Red background for bot messages */
+  color: #FFFFFF; /* White text for readability */
+}
+
+/* Global styles for the input field and send button */
+.user-input-form {
+  display: flex;
+  padding: 10px;
+  background-color: #FFFFFF; /* White background */
+}
+
+.user-input-text {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #ccc; /* Light grey border for the input */
+  background-color: #FFFFFF; /* White background for the input field */
+  color: #000; /* Black text color */
+}
+
+.send-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #ff4136; /* Red background for the send button */
+  color: #FFFFFF; /* White text for readability */
+  border: none;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #e12f1c; /* A darker shade of red for hover effect */
+}
