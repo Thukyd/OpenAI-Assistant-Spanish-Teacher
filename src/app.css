@@ -1,117 +1,136 @@
-/* src/global.css */
-
 /*
   Check Cunic Partition System
   https://romekmarber.com/portfolio/cunic/
+
+  Also check this for the websocket
+  https://ishadeed.com/article/facebook-messenger-chat-component/ 
 */
 
+
+/* Define primary colors for dark mode */
+:root {
+    --primary-red: #ff3b30;
+    /* Vibrant red for accents */
+    --primary-text: #e8e4dc;
+    /* Light gray for text */
+    --secondary-text: #f5f1e9;
+    /* Off-white for secondary text */
+    --background-dark: #333333;
+    /* Dark gray for primary background */
+    --background-darker: #1a1a1a;
+    /* Even darker gray for secondary background */
+    --border-color: #555555;
+    /* Darker gray for borders */
+    --input-background: #2b2b2b;
+    /* Slightly lighter background for input */
+}
+
 body {
-  font-family: 'Futura', sans-serif;
-  background-color: #1a1a1a; /* Grey background for the entire app */
-  color: #FFFFFF; /* White text color for contrast */
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: var(--background-darker);
+    color: var(--primary-text);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-input, button {
-  font-family: 'Futura', sans-serif;
-}
-
-
-button {
-  /* ... */
-  background-color: #ff4136; /* Orange */
-  /* ... */
-}
-
-button:hover {
-  background-color: #cc8400; /* Darker orange for hover state */
-}
-
-/* Style for input and button to make it more cohesive */
-input, button {
-  border: 2px solid #ff4136; /* Orange border */
-  /* ... */
-}
-
-
-/* Global styles for chat container */
+/* Chat container styles */
 .chat-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  max-width: 768px;
-  margin: 0 auto; /* Center the chat container */
-  background-color: #FFFFFF; /* White background for the container */
-  border: 1px solid #000; /* Black border for definition */
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  overflow: hidden;
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--background-dark);
+    position: relative;
+    padding-bottom: 60px;
+    /* Height of the input area */
 }
 
-/* Global styles for chat message list */
-.message-list {
-  list-style-type: none;
-  padding: 1rem;
-  margin: 0;
-  overflow-y: auto;
-  background-color: #FFFFFF; /* White background for the message list */
-  flex-grow: 1;
-  border-bottom: 1px solid #000; /* Black border to separate input area */
+/* Messages list styles */
+.messages {
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: calc(100vh - 160px);
+    background-color: var(--background-darker);
+    /* Darker background for message list */
 }
 
-/* Global styles for individual messages */
-.message {
-  display: block;
-  margin-bottom: 0.5rem;
-  padding: 0.6rem;
-  border-radius: 12px;
-  max-width: 80%;
-  word-wrap: break-word;
-  background-color: #FFFFFF; /* White background for messages */
-  border: 1px solid #ccc; /* Light grey border for each message */
+/* User and Bot message styles */
+.user-message,
+.bot-message {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* More pronounced shadow for depth */
+    border-radius: 18px;
+    padding: 10px 20px;
+    word-break: break-word;
+    margin-bottom: 10px;
 }
 
 .user-message {
-  color: #000; /* Black text for contrast */
-  align-self: flex-start; /* Align user messages to the left */
+    align-self: flex-end;
+    background-color: var(--primary-red);
+    /* Red for user messages */
 }
 
 .bot-message {
-  color: #000; /* Black text for contrast */
-  align-self: flex-end; /* Align bot messages to the right */
-  background-color: #ff4136; /* Red background for bot messages */
-  color: #FFFFFF; /* White text for readability */
+    align-self: flex-start;
+    background-color: var(--background-dark);
+    /* Slightly lighter gray for bot messages */
+    color: var(--secondary-text);
 }
 
-/* Global styles for the input field and send button */
-.user-input-form {
-  display: flex;
-  padding: 10px;
-  background-color: #FFFFFF; /* White background */
+/* Input area styles */
+.user-input-container {
+    display: flex;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--input-background);
+    padding: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
-.user-input-text {
-  flex-grow: 1;
-  margin-right: 10px;
-  padding: 10px;
-  border-radius: 20px;
-  border: 2px solid #ccc; /* Light grey border for the input */
-  background-color: #FFFFFF; /* White background for the input field */
-  color: #000; /* Black text color */
+#message-input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 18px 0 0 18px;
+    margin: 0;
+    background-color: var(--input-background);
+    /* Ensure input background matches the container */
+    color: var(--primary-text);
 }
 
-.send-button {
-  padding: 10px 20px;
-  border-radius: 20px;
-  background-color: #ff4136; /* Red background for the send button */
-  color: #FFFFFF; /* White text for readability */
-  border: none;
-  cursor: pointer;
+button[type="submit"] {
+    background-color: var(--primary-red);
+    color: #ffffff;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 0 18px 18px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
 }
 
-.send-button:hover {
-  background-color: #e12f1c; /* A darker shade of red for hover effect */
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: #e60000;
+    /* Slightly darker red on hover/focus */
+    transform: scale(1.05);
+    /* Interactive feedback */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .chat-container {
+        max-width: 100%;
+        margin: 20px 0;
+    }
 }

@@ -22,16 +22,18 @@
   }
 </script>
 
-<form on:submit|preventDefault={handleSubmit}>
-  <input 
-    type="text" 
-    bind:value={input} 
-    placeholder="Type your message..."
-    id="message-input" 
-    name="message" 
-  />
-  <button type="submit">Send</button>
-</form>
+<div class="user-input-container">
+  <form on:submit|preventDefault={handleSubmit}>
+    <input 
+      type="text" 
+      bind:value={input} 
+      placeholder="Type your message..."
+      id="message-input" 
+      name="message" 
+    />
+    <button type="submit">Send</button>
+  </form>
+</div>
 
 <!-- UserInput.svelte -->
 <style>

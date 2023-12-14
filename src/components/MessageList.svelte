@@ -3,14 +3,14 @@
   import { messages } from '../stores/messageStore';
 </script>
 
-<ul>
+<div class="messages">
   {#each $messages as message (message.id)}
-    <li class="{message.isUser ? 'user-message' : 'bot-message'}">
-      /* 
+    <div class="{message.isUser ? 'user-message' : 'bot-message'}">
       {message.text}
-    </li>
+    </div>
   {/each}
-</ul>
+</div>
+
 
 <!-- MessageList.svelte -->
 <style>
